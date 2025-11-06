@@ -1,0 +1,29 @@
+.menu {
+    &-name {
+        font-family: "noto";
+        font-weight: 600;
+    }
+
+    &-ingredients {
+        font-family: "ComicNeue";
+    }
+
+    &-price {
+        font-family: 'noto';
+    }
+
+}
+
+.button {
+    font-family: "open-sans";
+    display: flex !important;
+    align-items: center;
+}
+
+.name {
+    display: inline-block;
+    font-family: 'Edu';
+    letter-spacing: 1px;
+    margin: 0 1rem;
+    font-size: 1.3rem;
+}

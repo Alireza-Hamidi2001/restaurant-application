@@ -1,0 +1,19 @@
+@use './../abstracts/mixins' as *;
+
+h1 {
+    font-family: 'AudioWide';
+    animation: headerAnimation 2s;
+
+    @include respond (phone) {}
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+
+    & p {
+        font-size: 2.2rem;
+        font-family: 'Lime';
+        margin-left: 1rem;
+    }
+}
