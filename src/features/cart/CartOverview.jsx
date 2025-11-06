@@ -14,7 +14,7 @@ function CartOverview() {
     const totalCartQuantity = useSelector(getTotalQuantity);
 
     return (
-        <div className="grid grid-cols-[1fr_1fr] items-center justify-center gap-3 bg-neutral-800 px-6 py-4 text-emerald-50 sm:p-3 md:p-4">
+        <div className="grid h-[11vh] grid-cols-[1fr_1fr] items-center justify-center gap-3 bg-neutral-800 px-6 py-4 text-emerald-50 sm:h-auto sm:p-3 md:p-4">
             <p
                 className={`flex items-center space-x-4 text-xs tracking-widest sm:text-xl ${cart.length === 0 && "invisible"}`}
             >
