@@ -52,11 +52,11 @@ function Cart() {
                             className="group sm:py-4transition-colors hover:bg-green-500hover:text-green-100 flex max-w-fit cursor-pointer items-center gap-2 rounded-xs bg-green-200 px-4 py-2 text-green-900 duration-200 hover:bg-green-600 hover:text-green-100 focus:ring-2 focus:ring-green-300 focus:ring-offset-1 focus:outline-0 sm:px-6 sm:py-2 sm:text-xl"
                         >
                             <IoShieldCheckmark className="text-xl text-green-900 group-hover:text-green-100 sm:text-2xl" />
-                            Order pizzas
+                            Order
                         </Link>
                         <button
                             onClick={handleClearCart}
-                            className="flex max-w-fit cursor-pointer items-center gap-2 rounded-xs px-4 py-2 text-stone-700 transition-colors duration-200 hover:bg-red-500 hover:text-red-50 focus:ring-2 focus:ring-stone-300 focus:ring-offset-1 focus:outline-0 sm:px-6 sm:py-2 sm:text-xl"
+                            className="flex max-w-fit cursor-pointer items-center gap-2 rounded-xs bg-red-200 px-4 py-2 text-stone-700 transition-colors duration-200 hover:bg-red-500 hover:text-red-50 focus:ring-2 focus:ring-stone-300 focus:ring-offset-1 focus:outline-0 sm:px-6 sm:py-2 sm:text-xl"
                         >
                             <FaTrash className="text-xl sm:text-2xl" />
                             Clear cart

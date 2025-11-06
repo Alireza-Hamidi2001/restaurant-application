@@ -11,7 +11,7 @@ function Home() {
             <h1 className="mb-8 text-[2rem] text-emerald-950 md:text-[3.5rem]">
                 Taste the World on One Plate
                 <br />
-                <span className="text-[1.2rem] text-emerald-500">
+                <span className="text-[1.2rem] sm:text-4xl text-emerald-500">
                     Where Every Dish Is a Masterpiece
                 </span>
             </h1>

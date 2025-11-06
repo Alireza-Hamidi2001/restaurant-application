@@ -4,6 +4,8 @@ import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import store from "../../store";
 import { clearCart } from "../cart/CartSlice";
+import { useSelector } from "react-redux";
+import CartEmpty from "../cart/CartEmpty";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -11,39 +13,16 @@ const isValidPhone = (str) =>
         str
     );
 
-const fakeCart = [
-    {
-        pizzaId: 12,
-        name: "Mediterranean",
-        quantity: 2,
-        unitPrice: 16,
-        totalPrice: 32,
-    },
-    {
-        pizzaId: 6,
-        name: "Vegetale",
-        quantity: 1,
-        unitPrice: 13,
-        totalPrice: 13,
-    },
-    {
-        pizzaId: 11,
-        name: "Spinach and Mushroom",
-        quantity: 1,
-        unitPrice: 15,
-        totalPrice: 15,
-    },
-];
-
 function CreateOrder() {
     const navigation = useNavigation();
+    const cart = useSelector((state) => state.cart.cart);
+    const username = useSelector((state) => state.user.username);
+    const formErrors = useActionData();
     const isSubmitting = navigation.state === "submitting";
 
-    const formErrors = useActionData();
-
     // const [withPriority, setWithPriority] = useState(false);
-    const cart = fakeCart;
 
+    if (!cart.length) return <CartEmpty />;
     return (
         <div className="px-4 py-6">
             <h2 className="mb-8 text-xl font-semibold">
@@ -56,6 +35,7 @@ function CreateOrder() {
                     <label className="sm:basis-40">First Name</label>
                     <input
                         className="input grow"
+                        defaultValue={username}
                         type="text"
                         name="customer"
                         required
@@ -123,10 +103,12 @@ function CreateOrder() {
 export async function action({ request }) {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-
     const order = {
         ...data,
-        cart: JSON.parse(data.cart),
+        cart: JSON.parse(data.cart).map((item) => ({
+            ...item,
+            pizzaId: item.pizzaId || item.id, // ✅ اگر id هست، به pizzaId تغییرش بده
+        })),
         priority: data.priority === "on",
     };
 
