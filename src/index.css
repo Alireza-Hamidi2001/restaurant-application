@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "./../sass/base/_typography.scss";
 @layer components {
-    .inputs {
+    .input {
         @apply rounded-xs border border-neutral-300 bg-neutral-200 px-4 py-2 focus:border-neutral-400 focus:outline-0 md:px-6 md:py-3;
     }
     .font {
